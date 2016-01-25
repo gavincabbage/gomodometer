@@ -2,7 +2,6 @@ package gomodometer
 
 import (
 	"errors"
-	"fmt"
 	"os"
 )
 
@@ -61,7 +60,7 @@ func (o *MouseOdometer) sumReadingsUntilQuit() {
 		case reading := <-o.readings:
 			o.x += normalizeReading(reading[1])
 			o.y += normalizeReading(reading[2])
-			fmt.Println(convertToCentimeters(o.x), " ", convertToCentimeters(o.y)) // gnuplot> plot 'mouse.dat' u 1:2 w l
+			//fmt.Println(convertToCentimeters(o.x), " ", convertToCentimeters(o.y)) // gnuplot> plot 'mouse.dat' u 1:2 w l
 		}
 	}
 }
